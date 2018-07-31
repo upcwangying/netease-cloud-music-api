@@ -1,4 +1,6 @@
-FROM mhart/alpine-node:9
+FROM node:10.7
+
+LABEL maintainer="YING WANG <864891814@qq.com>"
 
 WORKDIR /app
 COPY . /app
@@ -10,4 +12,4 @@ RUN    rm package-lock.json \
     && npm install
 
 EXPOSE 3000
-CMD ["node", "app.js"]
+CMD [ "npm", "start", "daemon off;"]
